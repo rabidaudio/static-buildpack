@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "serving $WEB_ROOT on $PORT"
+
+make_config
+
+bin/start-nginx
+
+
+
+make_config(){
+  echo "make config"
+}
