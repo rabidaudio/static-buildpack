@@ -7,7 +7,9 @@ mkfifo $psmgr
 export WEB_ROOT=`pwd`
 
 #Evaluate config to get $PORT
-erb config/nginx.conf.erb > config/nginx.conf
+# erb config/nginx.conf.erb > config/nginx.conf
+sed -e "s;%PORT%;$PORT;g" -e "s;%WEB_ROOT%;$WEB_ROOT;g" config/nginx.conf.tmpl > config/nginx.conf
+
 
 n=1
 while getopts :f option ${@:1:2}
