@@ -8,17 +8,7 @@ cache_dir=$2
 env_dir=$3
 bp_dir=$(cd $(dirname $0); cd ..; pwd)
 
-echo "build dir $build_dir"
-ls $build_dir
-echo "cache_dir $cache_dir"
-ls $cache_dir
-echo "env_dir $env_dir"
-ls $env_dir
-echo "bp_dir $bp_dir"
-ls $bp_dir
-echo ""
-
-# $1/scripts/build_nginx.sh
+# $bp_dir/scripts/build_nginx.sh
 
 mkdir -p "$build_dir/bin/"
 cp "$bp_dir/bin/nginx-$STACK" "$build_dir/bin/nginx"
@@ -29,7 +19,7 @@ echo '-----> nginx-buildpack: Added start-nginx to app/bin'
 
 mkdir -p "$build_dir/config"
 
-cp config/mime.types "$build_dir/config/"
+cp "$bp_dir/config/mime.types" "$build_dir/config/"
 echo '-----> nginx-buildpack: Default mime.types copied to app/config/'
 
 if [[ ! -f $build_dir/config/nginx.conf.erb ]]; then
