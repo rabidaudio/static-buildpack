@@ -40,6 +40,7 @@ echo 'buildpack=nginx at=logs-initialized'
 	echo "buildpack=nginx at=start-app cmd=$COMMAND"
 # 	$COMMAND
 	echo 'app' >$psmgr
+	echo 'app' >"/tmp/app-initialized"
 ) &
 
 if [[ -z "$FORCE" ]]
