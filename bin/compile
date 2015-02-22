@@ -17,8 +17,8 @@ echo "-----> nginx-buildpack: Installed ${nginx_version} to app/bin"
 cp "$bp_dir/bin/start-nginx" "$build_dir/bin/"
 echo '-----> nginx-buildpack: Added start-nginx to app/bin'
 
-cp "$bp_dir/serve" "$build_dir/serve"
-echo '-----> nginx-buildpack: Added serve script to app/'
+# cp "$bp_dir/serve" "$build_dir/serve"
+# echo '-----> nginx-buildpack: Added serve script to app/'
 
 mkdir -p "$build_dir/config"
 
