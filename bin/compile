@@ -2,12 +2,12 @@
 
 set -e
 
-scripts/build_nginx.sh
-
 echo "working with $1"
 echo "working in"
 pwd
 echo ""
+
+# scripts/build_nginx.sh
 
 # mkdir -p "$1/bin/"
 # cp "bin/nginx-$STACK" "$1/bin/nginx"
